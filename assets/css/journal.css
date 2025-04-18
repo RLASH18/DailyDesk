@@ -1,0 +1,378 @@
+@import "../css/sidebar.css";
+
+:root {
+  --header-height: 3.5rem;
+
+  --first-color: #2487ce;
+  --title-color: #444444;
+  --text-color: #124265;
+  --body-color: #ffffff;
+  --shadow-color: hsla(228, 80%, 4%, .1);
+
+  --body-font: "Poppins", system-ui;
+  --normal-font-size: .938rem;
+  --smaller-font-size: .75rem;
+  --tiny-font-size: .75rem;
+
+  --font-regular: 400;
+  --font-semi-bold: 600;
+
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+#searchInput {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  border: 1px solid var(--first-color);
+  border-radius: 0.5rem;
+  transition: 0.3s ease;
+  box-shadow: 0 2px 4px var(--shadow-color);
+  color: var(--title-color);
+  padding-right: 2.5rem;
+  color: var(--text-color);
+  background-color: var(--body-color);
+}
+
+#searchInput::placeholder {
+  color: var(--text-color);
+}
+
+#searchInput:focus {
+  border-color: var(--first-color);
+  box-shadow: 0 0 0 0.15rem rgba(36, 135, 206, 0.2);
+  outline: none;
+}
+
+.search-icon-btn {
+  color: var(--first-color);
+  padding: 0.5rem 0.75rem;
+  font-size: 1.2rem;
+  transition: 0.2s ease-in-out;
+}
+
+.search-icon-btn:hover {
+  color: #186ca8;
+}
+
+.custom-filled-btn {
+  background-color: var(--first-color);
+  color: var(--body-color);
+  font-weight: var(--font-semi-bold);
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-filled-btn:hover,
+.custom-filled-btn:focus {
+  background-color: #186ca8;
+  color: var(--title-color);
+  box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.journal-card {
+  background-color: var(--body-color);
+  box-shadow: 0 4px 20px var(--shadow-color);
+  border: 1px solid var(--shadow-color);
+  transition: transform 0.3s ease;
+  height: 100%;
+  width: 100%;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.journal-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px var(--shadow-color);
+}
+
+.journal-img {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+}
+
+.journal-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.journal-card:hover .journal-img img {
+  transform: scale(1.05);
+}
+
+.image-actions {
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.journal-img:hover img {
+  filter: brightness(0.7);
+  transform: scale(1.05);
+}
+
+.journal-img:hover .image-actions {
+  opacity: 1 !important;
+}
+
+.tags-container {
+  margin: 10px 0;
+}
+
+.tag-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-right: 6px;
+  margin-bottom: 6px;
+  background-color: #e6f0fa;     
+  color: #124265;                
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.tag-badge:hover {
+  background-color: #cfe4f8;    
+  color: #0e3551;
+  cursor: pointer;
+}
+
+.entry-date {
+  font-size: 0.8rem;
+  color: #6c757d;
+}
+
+.entry-content {
+  color: var(--title-color);
+  padding: 15px;
+}
+
+.entry-text {
+  color: var(--text-color);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.btn-action {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  padding: 0;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+/* Edit Button - Primary */
+.edit-btn {
+  background-color: #198754;
+  color: #fff;
+}
+
+.edit-btn:hover {
+  background-color: #157347;
+  transform: scale(1.05);
+}
+
+/* Delete Button - Danger */
+.delete-btn {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.delete-btn:hover {
+  background-color: #bb2d3b;
+  transform: scale(1.05);
+}
+
+.view-btn {
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+.view-btn:hover {
+  background-color: #0b5ed7;
+  transform: scale(1.05);
+}
+
+/* add modal */
+#addJournalModal .modal-content {
+  background-color: var(--body-color);
+  color: var(--text-color);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#entry_title, #entry_text, #tags, #image{
+  background-color: var(--body-color);
+  color: var(--text-color);
+  border: 1px solid var(--first-color);
+}
+
+#addJournalModal textarea.form-control:focus,
+#addJournalModal select.form-select:focus,
+#addJournalModal input.form-control:focus {
+  color: var(--title-color);
+  border-color: var(--first-color);
+  box-shadow: 0 0 5px var(--first-color);
+}
+
+#addJournalModal .btn-primary {
+  background-color: var(--first-color);
+  border: none;
+  color: var(--body-color);
+  font-weight: var(--font-semi-bold);
+  padding: 0.75rem 2rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#addJournalModal .btn-primary:hover {
+  background-color: #1c6fa8;
+  transform: translateY(-2px);
+}
+
+#addJournalModal .btn-primary:active {
+  transform: translateY(1px);
+}
+
+#addJournalModal .btn-close {
+  border: none;
+  color: var(--body-color); 
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* idit modal */
+#editJournalModal .modal-content {
+  background-color: var(--body-color);
+  color: var(--text-color);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#edit_entry_title, #edit_entry_text, #edit_tags, #edit_image{
+  background-color: var(--body-color);
+  color: var(--text-color);
+  border: 1px solid var(--first-color);
+}
+
+#editJournalModal textarea.form-control:focus,
+#editJournalModal select.form-select:focus,
+#editJournalModal input.form-control:focus {
+  color: var(--title-color);
+  border-color: var(--first-color);
+  box-shadow: 0 0 5px var(--first-color);
+}
+
+#editJournalModal .btn-primary {
+  background-color: var(--first-color);
+  border: none;
+  color: var(--body-color);
+  font-weight: var(--font-semi-bold);
+  padding: 0.75rem 2rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#editJournalModal .btn-primary:hover {
+  background-color: #1c6fa8;
+  transform: translateY(-2px);
+}
+
+#editJournalModal .btn-primary:active {
+  transform: translateY(1px);
+}
+
+/* Close Button */
+#editJournalModal .btn-close {
+  border: none;
+  color: var(--body-color); 
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* View Modal Styles */
+#viewJournalModal .modal-content {
+  background-color: var(--body-color);
+  color: var(--text-color);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Optional: Header title color override */
+#viewJournalModal .modal-title {
+  color: var(--title-color);
+  font-weight: 600;
+}
+
+/* Optional: Close button color override (Bootstrap uses black by default) */
+#viewJournalModal .btn-close {
+  filter: invert(0.5);
+}
+
+#viewJournalModal .modal-body {
+  padding: 2rem;
+  color: var(--text-color); /* Ensures base body text color */
+}
+
+/* Title inside modal body */
+#viewJournalTitle {
+  color: var(--title-color);
+  font-weight: 600;
+}
+
+/* Date below title */
+#viewJournalDate {
+  color: #6c757d; /* muted gray tone */
+  font-size: 0.95rem;
+}
+
+/* Main text content */
+#viewJournalText {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-color);
+  white-space: pre-line;
+}
+
+/* Tag Container */
+#viewJournalModal .tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+#viewJournalModal .tag-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-right: 6px;
+  margin-bottom: 6px;
+  background-color: #e6f0fa;     
+  color: #124265;                
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
