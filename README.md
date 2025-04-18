@@ -1,7 +1,9 @@
 🗂️ DailyDesk
+
 DailyDesk is a personal productivity web app built using PHP and Bootstrap. It is designed to work offline and provides essential tools to help users organize their daily life efficiently.
 
 📌 Features
+
 🏠 Dashboard – Overview of daily tasks and reminders.
 
 ✅ To-Do List – Create, edit, and track your tasks.
@@ -14,6 +16,7 @@ DailyDesk is a personal productivity web app built using PHP and Bootstrap. It i
 
 
 🛠️ Tech Stack
+
 Frontend: Bootstrap 5, HTML, CSS, JavaScript
 
 Backend: PHP
@@ -22,6 +25,7 @@ Database: MySQL
 
 
 💾 Installation
+
 Clone the repository:
 
 git clone https://github.com/RLASH18/DailyDesk.git
@@ -34,6 +38,7 @@ Run localhost/dailydesk in your browser.
 
 
 🧱 Database Structure
+
 Main Tables:
 
 users – stores user info
