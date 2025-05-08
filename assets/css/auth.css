@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* Root Variables */
+:root {
+  --header-height: 3.5rem;
+
+  --first-color: #2487ce;
+  --title-color: #444444;
+  --text-color: #124265;
+  --body-color: #ffffff;
+  --shadow-color: hsla(228, 80%, 4%, 0.1);
+
+  --body-font: "Poppins", system-ui, sans-serif;
+  --normal-font-size: 0.938rem;
+  --smaller-font-size: 0.75rem;
+  --tiny-font-size: 0.75rem;
+
+  --font-regular: 400;
+  --font-semi-bold: 600;
+
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+body {
+  font-family: var(--body-font);
+  background-color: #f0f2f5;
+  color: var(--text-color);
+}
+
+section.vh-100 {
+  background-color: var(--body-color);
+}
+
+.card {
+  border: none;
+  border-radius: 1rem;
+  background-color: var(--body-color);
+  box-shadow: 0 4px 20px var(--shadow-color);
+  overflow: hidden;
+}
+
+.card img {
+  border-radius: 1rem 0 0 1rem;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.card-body h5 {
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+}
+
+.card-body .h1 {
+  color: var(--text-color);
+}
+
+.input-group-text {
+  background-color: #f1f3f5;
+  border: none;
+  border-right: 1px solid #dee2e6;
+  color: #495057;
+  font-size: 1.2rem;
+}
+
+.form-control {
+  border: 1px solid #dee2e6;
+  font-size: var(--normal-font-size);
+  border-left: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-control:focus {
+  border-color: var(--first-color);
+  box-shadow: 0 0 0 0.2rem rgba(36, 135, 206, 0.25);
+}
+
+.custom-btn {
+  background-color: var(--text-color);
+  color: #fff;
+  border: none;
+  width: 100%;
+  font-weight: var(--font-semi-bold);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.custom-btn:hover {
+  background-color: #0e3551;
+  transform: scale(1.03);
+}
+
+.alert-danger {
+  border-radius: 0.5rem;
+  font-size: var(--smaller-font-size);
+  font-weight: var(--font-regular);
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: var(--font-semi-bold);
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--first-color);
+}
+
+
+@media (max-width: 767.98px) {
+  .card img {
+    border-radius: 1rem 1rem 0 0;
+    height: auto;
+  }
+}

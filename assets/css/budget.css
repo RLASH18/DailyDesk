@@ -1,0 +1,312 @@
+@import "../css/sidebar.css";
+
+:root {
+  --header-height: 3.5rem;
+
+  --first-color: #2487ce;;
+  --title-color: #444444;
+  --text-color: #124265;
+  --body-color: #ffffff;
+  --shadow-color: hsla(228, 80%, 4%, .1);
+
+  --body-font: "Poppins", system-ui;
+  --normal-font-size: .938rem;
+  --smaller-font-size: .75rem;
+  --tiny-font-size: .75rem;
+
+  --font-regular: 400;
+  --font-semi-bold: 600;
+
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+#searchInput,
+#typeFilter {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  border: 1px solid var(--first-color);
+  border-radius: 0.5rem;
+  transition: 0.3s ease;
+  box-shadow: 0 2px 4px var(--shadow-color);
+  color: var(--title-color);
+}
+
+#searchInput {
+  padding-right: 2.5rem;
+  color: var(--text-color);
+  background-color: var(--body-color);
+}
+
+#searchInput::placeholder {
+  color: var(--text-color);
+}
+
+#typeFilter::after {
+  content: 'Select a type'; 
+  color: #aaa;
+  font-size: var(--normal-font-size);
+  font-family: var(--body-font);
+}
+
+#searchInput:focus,
+#typeFilter:focus {
+  border-color: var(--first-color);
+  box-shadow: 0 0 0 0.15rem rgba(36, 135, 206, 0.2);
+  outline: none;
+}
+
+#typeFilter {
+  background-color: var(--body-color);
+  color: var(--text-color);
+  border: 1px solid var(--first-color);
+}
+
+#typeFilter option {
+  color: var(--text-color);
+}
+
+.search-icon-btn {
+  color: var(--first-color);
+  padding: 0.5rem 0.75rem;
+  font-size: 1.2rem;
+  transition: 0.2s ease-in-out;
+}
+
+.search-icon-btn:hover {
+  color: #186ca8;
+}
+
+.custom-filled-btn {
+  background-color: var(--first-color);
+  color: var(--body-color);
+  font-weight: var(--font-semi-bold);
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-filled-btn:hover,
+.custom-filled-btn:focus {
+  background-color: #186ca8;
+  color: var(--title-color);
+  box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.card {
+  background-color: var(--body-color);
+  box-shadow: 0 4px 20px var(--shadow-color);
+  border-radius: 1rem;
+  border: none;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.card-body {
+  padding: 0.75rem 1rem;
+}
+
+.table {
+  margin-bottom: 0;
+  border-radius: 12px;
+}
+
+.table-light th {
+  background-color: var(--body-color);
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+  text-transform: uppercase;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.table-row-modern {
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+  font-size: 1rem;
+}
+
+.table-row-modern td span.fw-medium {
+  color: var(--text-color);
+}
+
+.table-row-modern td .date-logged-container span {
+  color: var(--text-color);
+}
+
+.table-row-modern td{
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+.table-row-modern:hover {
+  background-color: #f8f9fa;
+  border-left: 3px solid var(--first-color);
+}
+
+.date-logged-container {
+  display: inline-flex;
+  align-items: center;
+  color: #6c757d;
+}
+
+/* Category Badges */
+.badge {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 5px 10px;
+  letter-spacing: 0.3px;
+  border-radius: 6px;
+}
+
+.badge-income {
+  background-color: #e6f4ea;
+  color: #2e7d32;
+  border: 1px solid #c8e6c9;
+}
+
+.badge-expense {
+  background-color: #fff0f0;
+  color: #c62828;
+  border: 1px solid #f8d7da;
+}
+
+.badge-others {
+  background-color: #f3f3f3;
+  color: #6c757d;
+  border: 1px solid #dee2e6;
+}
+
+/* Action Buttons */
+.btn-action {
+  width: 25px;
+  height: 25px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px !important;
+  margin: 0 2px;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+
+}
+
+.btn-action:hover {
+  transform: translateY(-2px);
+}
+
+.btn-outline-primary {
+  border-color: var(--first-color);
+  color: var(--first-color);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--first-color);
+  color: #fff;
+}
+
+/* add modal */
+#addBudgetModal .modal-content {
+  background-color: var(--body-color);
+  color: var(--text-color);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#type, #amount, #description, #category, #date_logged{
+  background-color: var(--body-color);
+  color: var(--text-color);
+  border: 1px solid var(--first-color);
+}
+
+#addBudgetModal select.form-select:focus,
+#addBudgetModal input.form-control:focus,
+#addBudgetModal textarea.form-control:focus {
+  color: var(--title-color);
+  border-color: var(--first-color);
+  box-shadow: 0 0 5px var(--first-color);
+}
+
+#addBudgetModal .btn-primary {
+  background-color: var(--first-color);
+  border: none;
+  color: var(--body-color);
+  font-weight: var(--font-semi-bold);
+  padding: 0.75rem 2rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#addBudgetModal .btn-primary:hover {
+  background-color: #1c6fa8;
+  transform: translateY(-2px);
+}
+
+#addBudgetModal .btn-primary:active {
+  transform: translateY(1px);
+}
+
+#addBudgetModal .btn-close {
+  border: none;
+  color: var(--body-color); 
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* idit modal */
+#editBudgetModal .modal-content {
+  background-color: var(--body-color);
+  color: var(--text-color);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#edit_type, #edit_amount, #edit_description, #edit_category, #edit_date_logged{
+  background-color: var(--body-color);
+  color: var(--text-color);
+  border: 1px solid var(--first-color);
+}
+
+#editBudgetModal select.form-select:focus,
+#editBudgetModal input.form-control:focus,
+#editBudgetModal textarea.form-control:focus {
+  color: var(--title-color);
+  border-color: var(--first-color);
+  box-shadow: 0 0 5px var(--first-color);
+}
+
+#editBudgetModal .btn-primary {
+  background-color: var(--first-color);
+  border: none;
+  color: var(--body-color);
+  font-weight: var(--font-semi-bold);
+  padding: 0.75rem 2rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#editBudgetModal .btn-primary:hover {
+  background-color: #1c6fa8;
+  transform: translateY(-2px);
+}
+
+#editBudgetModal .btn-primary:active {
+  transform: translateY(1px);
+}
+
+/* Close Button */
+#editBudgetModal .btn-close {
+  border: none;
+  color: var(--body-color); 
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+

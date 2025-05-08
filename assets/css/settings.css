@@ -1,0 +1,150 @@
+@import "../css/sidebar.css";
+
+:root {
+  --header-height: 3.5rem;
+  
+  /* Color palette */
+  --primary-color: #2487ce;
+  --primary-dark: #1a6fb8;
+  --title-color: #444444;
+  --text-color: #124265;
+  --body-color: #ffffff;
+  --shadow-color: hsla(228, 80%, 4%, 0.1);
+  --shadow-elevated: 0 4px 20px var(--shadow-color);
+  --shadow-small: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  /* Typography */
+  --body-font: "Poppins", system-ui, -apple-system, sans-serif;
+  --normal-font-size: 1rem; /* Slightly larger for better readability */
+  --small-font-size: 0.875rem;
+  --tiny-font-size: 0.75rem;
+
+  /* Font weights */
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /* Z-index */
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+.card {
+  background-color: var(--body-color);
+  box-shadow: 0 4px 20px var(--shadow-color);
+  border-radius: 1rem;
+  border: none;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.card-body {
+  padding: 0.75rem 1rem;
+}
+
+/* Profile Section */
+.profile-pic-section {
+  background-color: var(--shadow-color);
+  border-top-left-radius: 1rem;
+  padding: 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Profile Image */
+.profile-pic-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.profile-pic {
+  width: 100%;       
+  max-width: 250px;   
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--primary-color);
+  box-shadow: var(--shadow-small);
+  transition: border-color 0.3s ease;
+}
+
+.profile-pic:hover {
+  border-color: var(--primary-dark);
+}
+
+/* Camera Button */
+.profile-camera-btn {
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+
+.profile-camera-btn:hover {
+  background-color: var(--primary-dark);
+  transform: scale(1.1);
+}
+
+.profile-camera-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* File Input */
+input[type="file"].hidden-input {
+  display: none;
+}
+
+/* Upload Button */
+.profile-upload-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: var(--small-font-size);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.profile-upload-btn:hover {
+  background-color: var(--primary-dark);
+}
+
+label {
+  background-color: var(--body-color);
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+  text-transform: uppercase;
+  }
+
+#username, #email, #current_password, #new_password, #confirm_password{
+  background-color: var(--body-color);
+  color: var(--text-color);
+  border: 1px solid var(--first-color);
+}
+
+.btn-primary {
+  background-color: var(--first-color);
+  color: var(--body-color);
+  font-weight: var(--font-semi-bold);
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
