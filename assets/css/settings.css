@@ -168,6 +168,12 @@ label {
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
+@media (max-width: 576px) {
+    .responsive-btn {
+        font-size: 1rem;
+    }
+}
+
 #delete_password{
   background-color: var(--body-color);
   color: var(--text-color);
@@ -195,10 +201,4 @@ label {
   font-size: 1.2rem;
   font-weight: 700;
   cursor: pointer;
-}
-
-@media (max-width: 576px) {
-    .responsive-btn {
-        font-size: 1rem;
-    }
 }
