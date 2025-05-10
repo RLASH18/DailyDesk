@@ -94,7 +94,6 @@
   transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-
 .profile-camera-btn:hover {
   background-color: var(--primary-dark);
   transform: scale(1.1);
