@@ -158,6 +158,12 @@ label {
   
 }
 
+@media (max-width: 576px) {
+    .responsive-btn {
+        font-size: 1rem;
+    }
+}
+
 /* delete modal */
 #deleteAccountModal .modal-content {
   background-color: var(--body-color);
@@ -166,12 +172,6 @@ label {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
   transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-@media (max-width: 576px) {
-    .responsive-btn {
-        font-size: 1rem;
-    }
 }
 
 #delete_password{
