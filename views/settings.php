@@ -79,13 +79,15 @@
                                                 <label class="form-check-label mb-4" for="togglePassword">Show Passwords</label>
                                             </div>
 
-                                            <button type="submit" class="btn btn-primary" name="update_profile">
-                                                <i class="fas fa-user-edit me-2"></i> Update Profile
-                                            </button>
+                                            <div class="d-grid gap-2 d-sm-flex">
+                                                <button type="submit" class="btn btn-primary responsive-btn" name="update_profile">
+                                                    <i class="fas fa-user-edit me-2"></i> Update Profile
+                                                </button>
 
-                                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteAccountModal">
-                                                <i class="fas fa-trash-alt me-2"></i>Delete Account
-                                            </button>
+                                                <button type="button" class="btn btn-danger responsive-btn" data-bs-toggle="modal" data-bs-target="#deleteAccountModal">
+                                                    <i class="fas fa-trash-alt me-2"></i> Delete Account
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

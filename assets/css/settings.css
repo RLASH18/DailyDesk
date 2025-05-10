@@ -149,6 +149,15 @@ label {
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+.btn-danger {
+  font-weight: var(--font-semi-bold);
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  
+}
+
 /* delete modal */
 #deleteAccountModal .modal-content {
   background-color: var(--body-color);
@@ -186,4 +195,10 @@ label {
   font-size: 1.2rem;
   font-weight: 700;
   cursor: pointer;
+}
+
+@media (max-width: 576px) {
+    .responsive-btn {
+        font-size: 1rem;
+    }
 }
