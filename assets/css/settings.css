@@ -148,3 +148,42 @@ label {
   padding: 0.5rem 1rem;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
+
+/* add modal */
+#deleteAccountModal .modal-content {
+  background-color: var(--body-color);
+  color: var(--text-color);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#delete_password{
+  background-color: var(--body-color);
+  color: var(--text-color);
+  border: 1px solid var(--first-color);
+}
+
+#deleteAccountModal input.form-control:focus {
+  color: var(--title-color);
+  border-color: var(--first-color);
+  box-shadow: 0 0 5px var(--first-color);
+}
+
+#deleteAccountModal .btn-primary:hover {
+  background-color: #1c6fa8;
+  transform: translateY(-2px);
+}
+
+#deleteAccountModal .btn-primary:active {
+  transform: translateY(1px);
+}
+
+#deleteAccountModal .btn-close {
+  border: none;
+  color: var(--body-color); 
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+}

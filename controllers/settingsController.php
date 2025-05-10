@@ -159,6 +159,63 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['update_profile'])){
     exit;
 }
 
+// Handle account deletion
+if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['delete_account'])) {
+    $delete_password = htmlspecialchars(trim($_POST['delete_password'] ?? ''));
+    
+    if (empty($delete_password)) {
+        $_SESSION['error_message'] = 'Password is required to delete account.';
+    } 
+
+    elseif (!password_verify($delete_password, $user['password_hash'])) {
+        $_SESSION['error_message'] = 'Incorrect password.';
+    } 
+
+    else {
+        try {
+            // Start transaction
+            $conn->beginTransaction();
+            
+            // Delete user's profile picture if it exists
+            if (!empty($user['profile_pic']) && $user['profile_pic'] !== 'default.png') {
+                $profile_pic_path = '../uploads/profile_pics/' . $user['profile_pic'];
+                if (file_exists($profile_pic_path)) {
+                    unlink($profile_pic_path);
+                }
+            }
+            
+            // Delete user's data from related tables first (if any)
+            // Add your related table deletions here if needed
+            // Example: $conn->prepare("DELETE FROM user_posts WHERE user_id = :user_id")->execute([':user_id' => $user_id]);
+            
+            // Finally, delete the user
+            $stmt = $conn->prepare("DELETE FROM users WHERE id = :user_id");
+            $stmt->bindParam(':user_id', $user_id);
+            
+            if ($stmt->execute()) {
+                $conn->commit();
+                
+                // Clear session and redirect to login
+                session_destroy();
+                header("Location: ../index?message=account_deleted");
+                exit;
+            } 
+            
+            else {
+                throw new Exception("Failed to delete user. Please try again.");
+            }
+        } 
+        
+        catch (Exception $e) {
+            $conn->rollBack();
+            $_SESSION['error_message'] = 'Error deleting account. Please try again.';
+        }
+    }
+    
+    header("Location: ../views/settings");
+    exit;
+}
+
 if (isset($_SESSION['error_message'])){
     $error_message = $_SESSION['error_message'];
     unset($_SESSION['error_message']);
@@ -173,4 +230,3 @@ if (isset($_SESSION['info_message'])){
     $info_message = $_SESSION['info_message'];
     unset($_SESSION['info_message']);
 }
-

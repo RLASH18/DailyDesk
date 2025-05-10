@@ -79,10 +79,42 @@
                                                 <label class="form-check-label mb-4" for="togglePassword">Show Passwords</label>
                                             </div>
 
-                                            <button type="submit" class="btn btn-primary" name="update_profile">Update Profile</button>
+                                            <button type="submit" class="btn btn-primary" name="update_profile">
+                                                <i class="fas fa-user-edit me-2"></i> Update Profile
+                                            </button>
+
+                                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteAccountModal">
+                                                <i class="fas fa-trash-alt me-2"></i>Delete Account
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Delete Account Modal -->
+        <div class="modal fade" id="deleteAccountModal" tabindex="-1" aria-labelledby="deleteAccountModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="deleteAccountModalLabel">Delete Account</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-danger"><i class="fas fa-exclamation-triangle me-2"></i>Warning: This action cannot be undone!</p>
+                        <p>Are you sure you want to delete your account? All your data will be permanently removed.</p>
+                        <form action="../controllers/settingsController.php" method="POST">
+                            <input type="hidden" name="delete_account" value="1">
+                            <div class="mb-3">
+                                <label for="delete_password" class="form-label">Enter your password to confirm</label>
+                                <input type="password" class="form-control" id="delete_password" name="delete_password" required>
+                            </div>
+                            <div class="text-end">
+                                <button type="submit" class="btn btn-danger">Delete Account</button>
                             </div>
                         </form>
                     </div>
