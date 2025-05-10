@@ -149,7 +149,7 @@ label {
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* add modal */
+/* delete modal */
 #deleteAccountModal .modal-content {
   background-color: var(--body-color);
   color: var(--text-color);
