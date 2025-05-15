@@ -52,4 +52,4 @@ DailyDesk is a personal productivity web app built using PHP and Bootstrap. It i
 
 ## 👤 Author
 
-**Rookies Developer Ryan ✨**
+**Rookiees Developer Ryan ✨**
