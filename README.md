@@ -1,4 +1,4 @@
-# 🗂️ DailyDes
+# 🗂️ DailyDesk
 
 DailyDesk is a personal productivity web app built using PHP and Bootstrap. It is designed to work offline and provides essential tools to help users organize their daily life efficiently.
 
