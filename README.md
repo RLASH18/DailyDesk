@@ -26,7 +26,7 @@ DailyDesk is a personal productivity web app built using PHP and Bootstrap. It i
 
 1. Clone the Repository:
    ```bash
-   git clone https://github.com/RLASH18/DailyDesk.git
+   git clone https://github.com/yourusername/DailyDesk.git
 
 2. Move it to your local server directory (htdocs in XAMPP).
 
